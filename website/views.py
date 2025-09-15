@@ -58,5 +58,5 @@ def dashboard(request):
     my_records = Record.objects.all()
     context = {'records': my_records}
 
-    return render(request, 'website/dashboard.html', context=context)
+    return render(request, 'pages/dashboard.html', context=context)
  

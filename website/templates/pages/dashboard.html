@@ -1,7 +1,17 @@
-{% extends 'website/base.html' %}
+{% extends 'pages/base.html' %}
 
 {% block content %}
 
     <h1> Welcome to the Dashboard {{user}} </h1>
+    <hr>
+
+    <a class="btn btn-outline-primary btn-sm" href="{% url 'dashboard' %}">
+        create record
+    </a>
+    {% for record in records %}
+        {{record.id}}
+        {{record.first_name}}
+        {{record.last_name}}
+    {% endfor %}
 
 {% endblock %}
