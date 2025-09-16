@@ -1,0 +1,18 @@
+{% extends 'pages/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<br>
+<div class="container bg-dark p-5 form-layout">
+    <h1>Update Record</h1>
+    <h2>Update the Record below</h2>
+    <hr>
+    <br>
+    <form method="POST" autocomplete = "off">
+        {% csrf_token %}
+        {{update_form|crispy}}
+        <br>
+        <button type="submit" class="btn btn-info">Update Record &nbsp; <i class="fa fa-plus" aria-hidden="true"></i></button>
+        <a href="{% url 'dashboard' %}" class="btn btn-secondary">Return &nbsp; <i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+    </form>
+</div>
+{% endblock %}
